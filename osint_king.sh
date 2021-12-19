@@ -35,4 +35,7 @@ else
         echo "Analisando Metadados:"
         exiftool $PASTA/*.$FORMATO
         echo ""; echo "==============================================="
+        echo "Links Index of:"
+        lynx --dump "https://google.com/search?q=site:$ALVO+'index of'" | grep "]Index of" | cut -d "-" -f1 | cut -d " " -f6
+        echo ""; echo "==============================================="
 fi
