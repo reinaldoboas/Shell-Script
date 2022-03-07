@@ -25,7 +25,7 @@ echo "-> Tecnologias: $tecnologias"
 echo "=============================================================="
 
 echo "Buscando por arquivos: "
-for palavra in $(cat lista2.txt)
+for palavra in $(cat /usr/share/wordlists/dirb/small.txt)
 do
 resposta_arquivo=$(curl -s -H "User-Agent: KingTool" -o /dev/null -w "%{http_code}" $alvo/$palavra.$extensao)
 if [ $resposta_arquivo == "200" ]; then
