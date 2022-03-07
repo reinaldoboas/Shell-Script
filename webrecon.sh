@@ -36,7 +36,7 @@ done
 #### Buscando por diretórios
 echo "=============================================================="
 echo "Buscando por Diretórios e Arquivos:"
-for palavra in $(cat lista2.txt)
+for palavra in $(cat /usr/share/wordlists/dirb/small.txt)
 do
 resposta=$(curl -s -H "User-Agent: KingTool" -o /dev/null -w "%{http_code}" $alvo/$palavra/)
 
